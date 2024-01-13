@@ -1,0 +1,367 @@
+@use '../helpers' as *;
+
+
+.heroSection {
+  position: relative;
+
+  .heroText {
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    line-height: 3rem;
+    z-index: 5;
+    overflow: hidden;
+    padding: 0 30px 18px 30px;
+
+    span {
+      display: flex;
+      align-items: baseline;
+      gap: 5px;
+    }
+
+    .heroMainH{
+      font-family: $pri-font;
+      @include text(2.8rem, 300, normal);
+    }
+    .heroSecH{
+      font-size:4rem;
+      font-style: italic;
+    }
+  }
+
+  .heroCvBox {
+    position: absolute;
+    left: 7%;
+    top: 40%;
+
+    .center {
+      width: 300px;
+      height: 60px;
+      position: absolute;
+
+      .btn {
+        width: 300px;
+        height: 60px;
+        cursor: pointer;
+        background: transparent;
+        border: 1px solid $blue;
+        outline: none;
+        transition: 1s ease-in-out;
+
+        svg {
+          position: absolute;
+          left: 0;
+          top: 0;
+          fill: none;
+          stroke: $light;
+          stroke-dasharray: 300 700;
+          stroke-dashoffset: 240;
+          transition: 1s ease-in-out;
+        }
+        
+        &:hover {
+          transition: 1s ease-in-out;
+          background: $blue;
+        }
+        
+        &:hover svg {
+          stroke-dashoffset: -480;
+        }
+
+        &:hover .heroCvLink{
+          color: $dark;
+        }
+
+        .heroCvLink {
+          color: $blue;
+          font-weight: 500;
+          transition: 1s ease-in-out;
+          font-size: 18px;
+
+          .heroCvIcon {
+            font-size: 1.5rem;
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  .heroImgBox {
+    position: absolute;
+    right: 0;
+    top: 8%;
+    padding: 5px;
+    width: 45%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: $light;
+    box-shadow: 0px 0px 2px 4px rgba(0, 0, 0, .165);
+
+    .heroImg {
+      position: absolute;
+      right: 0;
+      width: 95%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      box-shadow: 0px 0px 2px 4px rgba(0, 0, 0, .165);
+    }
+  }
+}
+
+
+.skillsSection {
+  position: relative;
+
+  .skillsSubTitle {
+    margin-top: 10px;
+    width: 30%;
+  }
+  
+  .homeSkillBubbles {
+    @include mainFlex(space-between);
+    margin-top: 80px;
+  }
+  
+  .skillsWrapper {
+    position: relative;
+
+    .homeToolBubbles {
+      width: 60%;
+      margin-top: 20px;
+      position: absolute;
+      top: 15%;
+      left: 30%;
+      display: none;
+      grid-template-columns: 1fr 1fr 1fr;
+  
+      &.slideToolBubbles {
+        animation: slideTool 3s;
+        -webkit-animation: slideTool 3s;
+        -moz-animation: slideTool 3s;
+        animation-fill-mode: forwards;
+        -webkit-animation-fill-mode: forwards;
+        display: grid;
+      }
+    } 
+  }
+}
+
+
+.projectsSection {
+  text-align: center;
+  min-height: 2200px;
+
+  .projectSlogan {
+    position: relative;
+    height: 400px;
+    text-align: left;
+
+    h4 {
+      position: absolute;
+      top: 25px;
+    }
+
+    img {
+      width: 400px;
+      aspect-ratio: 1;
+      position: absolute;
+      right: 0;
+    }
+  }
+  
+  .proCard {
+    margin-block: 50px;
+    @include mainFlex(center);
+
+    .cardImgWrapper {
+      width: 50%;
+
+      .proCardImg {
+        box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.26);
+        width: 100%;
+      }
+    }
+
+  
+    .cardText, .cardTextFlip {
+      border-radius: 10px;
+      background: $dark;
+      box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.26);
+      color: $light;
+      width: 40%;
+      height: 150px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-direction: column;
+      z-index: 3;
+      text-align: left;
+
+      h2, p {        
+        margin-left: 10px;
+      }
+    }
+    .cardTextFlip {
+      transform: translateX(100px);
+    }
+  }
+
+  button {
+    margin-top: 100px;
+  }
+}
+
+@include media("<LGdesktop") {
+
+
+  .projectsSection {
+    min-height: 2100px;
+  }
+}
+
+@include media("<mDesktop") {
+	.heroSection .heroText {
+
+    .heroMainH{
+      font-size: 2.5rem;
+    }
+    .heroSecH{
+      font-size: 3.5rem;
+    }
+  }
+
+  .projectsSection {
+    min-height: 1900px;
+  }
+}
+
+@include media("<smDesktop") {
+	.heroSection {
+    min-height: 700px;
+
+    .heroText .heroMainH {font-size: 2rem;}
+    .heroText .heroSecH {font-size: 3rem;}
+  }
+  .projectsSection {min-height: 1800px;}
+
+  .skillsSection .skillsSubTitle {
+    width: 70%;
+  }
+}
+
+@include media("<desktop") {
+
+  .skillsSection  { margin-top: 100px; }
+}
+
+@include media("<LGtablet") {
+	.skillsSection .skillsWrapper {
+    min-height: 600px;
+
+    .homeToolBubbles {
+      margin-top: 50px;
+      top: 50%;
+      left: 15%;
+    } 
+  }
+}
+
+@include media("<mTablet") {
+  .heroSection {
+    @include mainFlex(center);
+    flex-direction: column;
+    gap: 50px;
+  
+    .heroText {
+      position: relative;
+      margin-top: 50px;
+      left: 0;
+    }
+
+    .heroCvBox {
+      position: unset;
+      margin: 50px auto 100px auto;
+      display: flex;
+      justify-content: center;
+    }
+  
+    .heroImgBox {
+      position: relative;
+      margin-bottom: 80px;
+      width: 70%;
+    }
+  } 
+
+  .projectsSection {
+    min-height: 1400px;
+    margin-top: 100px;
+
+    .projectSlogan {
+      height: 350px;
+      img {
+        margin-top: 50px;
+        width: 50%;
+      }
+    }
+  }
+}
+
+@include media("<tablet") {
+  .heroSection .heroText {
+    .heroMainH{ font-size: 1.7rem; }
+    .heroSecH{ font-size: 2.3rem; }
+  }
+
+  .skillsSection {
+    margin-top: 100px;
+    
+    .skillsWrapper {
+      min-height: 700px;
+  
+      .homeToolBubbles {
+        width: 90%;
+        grid-template-columns: 1fr 1fr;
+      } 
+    }
+  }
+
+  .projectsSection {
+    min-height: 1100px;
+    .projectSlogan { height: 250px; }
+    button {
+      margin-top: 0;
+    }
+  }
+}
+
+@include media("<LGphone") {
+  .heroSection {
+    .heroText {
+      padding: 0;
+      .heroMainH{ font-size: 1.4rem; }
+      .heroSecH{ font-size: 2rem; }
+    }
+
+    .heroImg { width: 100%;}
+  }
+
+  .skillsSection {
+    .skillsSubTitle { width: 90%; }
+    
+    .skillsWrapper .homeToolBubbles {
+      width: 100%;
+      left: 0;
+    }
+  }
+
+  .projectsSection {
+    .projectSlogan {
+      height: 200px;
+    }
+    
+    button {
+      margin-top: 0;
+    }
+  }
+}

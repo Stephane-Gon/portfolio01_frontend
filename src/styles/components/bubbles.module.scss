@@ -1,0 +1,245 @@
+@use '../helpers' as *;
+
+.bubblesBg {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.bubble, 
+.bigBubble, 
+.homeSkillBubble,
+.skillPageBubble{
+  background: radial-gradient(50% 50% at 50% 50%, rgba(196, 196, 196, 0) 85.42%, rgba(150, 192, 237, 0.5) 100%);
+  width: 100px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  transform: rotate(-15deg);
+  position: absolute;
+  z-index: -1;
+
+  &.bubble1 {
+    animation: bubble1 7s linear infinite;
+    -webkit-animation: bubble1 7s linear infinite;
+    -moz-animation: bubble1 7s linear infinite;
+  }
+
+  &.bubble2 {
+    animation: bubble2 8s linear infinite;
+    -webkit-animation: bubble2 8s linear infinite;
+    -moz-animation: bubble2 8s linear infinite;
+  }
+
+  &.bubble3 {
+    animation: bubble3 15s ease-in-out infinite;
+    -webkit-animation: bubble3 15s linear infinite;
+    -moz-animation: bubble3 15s linear infinite;
+  }
+
+  &.bubble5 {
+    animation: bubble5 3s;
+    -webkit-animation: bubble5 3s;
+    -moz-animation: bubble5 3s;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+  }
+
+  &.bubble6 {
+    animation: bubble6 3s;
+    -webkit-animation: bubble6 3s;
+    -moz-animation: bubble6 3s;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+  }
+
+
+  .bubbleElipse {
+    background: linear-gradient(180deg, rgba(150, 192, 237, 0.3) 0%, rgba(245, 245, 245, 0.1) 88.54%);
+    transform: matrix(1, 0.02, -0.03, 1, 0, 0);
+    position: absolute;
+    top: 0;
+    left: 20%;
+    width: 60%;
+    height: 40%;
+    border-radius: 50%;
+  
+    .bubbleShinny{
+      background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.88) 76.04%, rgba(255, 255, 255, 0) 100%);
+      transform: matrix(0.92, -0.34, 0.41, 0.94, 0, 0);
+      position: absolute;
+      width: 30%;
+      height: 20%;
+      top: 15%;
+      left: 10%;
+    }
+  }
+}
+
+.bubbleSkillLogo {
+  position: absolute;
+  right: 18%;
+  top: 10%;
+  width: 20%;
+  aspect-ratio: 1;
+}
+
+.bubbleText {
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  text-align: center;
+  width: 80%;
+
+  p {
+    margin-top: 20px;
+    font-size: 1.2rem;
+  }
+
+}
+
+.bigBubble {
+  position: relative;
+  margin-top: 100px;
+  width: 38%;
+}
+
+.skillBubble {
+  position: relative;
+  cursor: pointer;
+  z-index: 1;
+  
+  .bubbleText {top: 35%}
+}
+
+.homeSkillBubble {
+  background: radial-gradient(50% 50% at 50% 50%, rgba(150, 192, 237, 0.5) 85.42%, rgba(150, 192, 237, 0.74) 100%);
+  width: 25%;
+  margin: 100px auto;
+}
+
+.tollBubbleBox {
+  @include mainFlex(flex-start);
+  gap: 10px;
+  margin: 15px 0;
+  cursor: pointer;
+
+  .toolBubble {
+    position: relative;
+    z-index: 1;
+    @include mainFlex(center);
+  }
+}
+
+
+.skillPageBubble {
+  background: radial-gradient(50% 50% at 50% 50%, rgba(224, 103, 117, 0.5) 85.42%, rgba(224, 103, 117, 0.74) 100%);
+  width: 27%;
+  margin: 50px auto 0 auto;
+
+  .bubbleElipse {
+    background: linear-gradient(180deg, rgba(224, 103, 117, 0.43) 0%, rgba(245, 245, 245, 0.1) 88.54%);
+  }
+}
+
+@include media("<LGdesktop") {
+	.bigBubble {
+    width: 45%;
+  }
+
+  .skillPageBubble, .homeSkillBubble {
+    width: 30%;
+  }
+}
+
+
+@include media("<mDesktop") {
+	.bubbleText {top: 25%}
+}
+
+
+@include media("<smDesktop") {
+  .bubbleText {
+    top: 20%;
+    p {font-size: 1.1rem;}
+  }
+}
+
+@include media("<desktop") {
+	.bigBubble {
+    width: 50%;
+  }
+  .skillPageBubble, .homeSkillBubble {
+    .bubbleText p {
+        font-size: 1rem;
+    }
+  }
+
+  .tollBubbleBox {
+    .toolBubble {
+      width: 70px;
+      height: 70px;
+      .bubbleToolLogo {
+        width: 80%;
+      }
+    }
+  }
+}
+
+@include media("<LGtablet") {
+  .tollBubbleBox .toolBubble {
+    margin: 0 10px;
+
+    .bubbleToolLogo {
+      aspect-ratio: 1;
+    }
+  }
+}
+
+
+@include media("<mTablet") {
+  .bigBubble {  width: 60%;}
+
+  .skillPageBubble, .homeSkillBubble {
+    width: 40%;
+  }
+
+  .tollBubbleBox {  margin-top: 40%;}
+}
+
+@include media("<850px") {
+  .bigBubble {  width: 70%;}
+}
+
+@include media("<tablet") {
+  .skillPageBubble, .homeSkillBubble {
+    width: 60%;
+  }
+
+  .bubblesBg {
+    display: none;
+  }
+
+  .tollBubbleBox { margin: 15px 0; }
+}
+
+@include media("<680px") {
+  .bigBubble {  width: 95%;}
+}
+
+@include media("<LGphone") {
+  .bigBubble {
+    margin-top: 0;
+    height: 500px;
+    .bubbleElipse .bubbleShinny{ background: none; }
+  }
+
+  .tollBubbleBox .toolBubble {
+    margin: 0;
+  }
+
+  .skillPageBubble, .homeSkillBubble {
+    width: 85%;
+  }
+}

@@ -1,0 +1,45 @@
+
+// COLORS
+$light: #F5F5F5;
+$dark: #342E37;
+$blue: #96C0ED;
+$green: #A6F17E;
+$orange: #FCB55F;
+$pink: #E06775;
+$violet: #C237D2;
+
+
+// FONTS
+$pri-font: 'Roboto', sans-serif;
+$sec-font: 'Lobster Two', cursive;
+
+// EXTENDS
+%btnPseudoClass {
+  content: "";
+  height: 100px;
+  width: 20%;
+  position: absolute;
+  z-index: -1;
+  transform: rotate(-11deg);
+}
+
+
+@mixin abs-position ($top, $right, $bottom, $left) {
+  position: absolute; 
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin text($size, $weight, $style) {
+  font-size: $size;
+  font-weight: $weight;
+  font-style: $style;
+}
+
+@mixin mainFlex($space) {
+  display: flex;
+  justify-content: $space;
+  align-items: center;
+}

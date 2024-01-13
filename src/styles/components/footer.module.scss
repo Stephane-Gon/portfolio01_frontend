@@ -1,0 +1,36 @@
+@use '../helpers' as *;
+
+
+.footer {
+  width: 100%;
+  background-color: $dark;
+  min-height: 40px;
+  padding-block: 20px;
+  margin-top: 90px;
+
+
+  .footerContent {
+    width: 90%;
+    margin: 0 auto;
+    @include mainFlex(space-between);
+
+    .footerRights {
+      color: $light;
+    }
+
+    .socialLinks {
+      a {
+        margin: 0 10px
+      }
+    }
+  }
+  
+}
+
+@include media("<mTablet") {
+  .footer .footerContent {
+    @include mainFlex(space-between);
+    flex-direction: column;
+    gap: 50px;
+  }
+}

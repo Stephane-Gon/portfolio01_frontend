@@ -1,0 +1,62 @@
+@use '../helpers' as *;
+
+.skillSection {
+  position: relative;
+  min-height: 800px;
+
+  .toolBubbles {
+    width: 60%;
+    position: absolute;
+    top: 5%;
+    left: 30%;
+    display: none;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    &.slideToolBubbles {
+      animation: slideTool 3s;
+      -webkit-animation: slideTool 3s;
+      -moz-animation: slideTool 3s;
+      animation-fill-mode: forwards;
+      -webkit-animation-fill-mode: forwards;
+      display: grid;
+    }
+  }
+}
+
+@include media("<smDesktop") {
+  .skillSection {min-height: 650px;}
+}
+
+@include media("<LGtablet") {
+	.skillSection .toolBubbles {
+      margin-top: 50px;
+      top: 45%;
+      left: 20%;
+  }
+}
+
+@include media("<tablet") {
+
+  .skillSection {
+    min-height: 800px;
+  
+    .toolBubbles {
+      width: 80%;
+      grid-template-columns: 1fr 1fr;
+      left: 10%;
+      top: 50%;
+    } 
+  }
+}
+
+@include media("<600px") {
+  .skillSection .toolBubbles { top: 40%; }
+}
+
+@include media("<LGphone") {
+
+  .skillSection .toolBubbles {
+    width: 100%;
+    left: 0;
+  }
+}

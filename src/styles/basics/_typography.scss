@@ -1,0 +1,145 @@
+@use '../helpers' as *;
+
+h1, h2, h3, my-heading {
+  font-family: $sec-font;
+}
+.my-heading {
+  @include text(2.5rem, 600, normal);
+}
+.notFound-heading {
+  @include text(5rem, 600, normal);
+}
+h1 {
+  @include text(2.25rem, 600, normal);
+}
+h2 {
+  @include text(2rem, 400, normal);
+}
+h3 {
+  @include text(1.75rem, 400, normal);
+}
+h4 {
+  @include text(1.5rem, 500, italic);
+}
+h5 {
+  @include text(1.125rem, 500, italic);
+}
+h6 {
+  @include text(0.875rem, 300, italic);
+}
+
+.divided-heading {
+  display: flex
+}
+
+p {
+  @include text(1rem, 400, normal);
+}
+a {
+  color: $dark;
+  text-decoration: none;
+  @include text(1rem, 500, italic);
+  
+}
+
+.accent-word {
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+.header-a-blue:after {
+  background: $blue;
+}
+.header-a-green:after {
+  background: $green;
+}
+.header-a-orange:after {
+  background: $orange;
+}
+.header-a-pink:after {
+  background: $pink;
+}
+
+.sideMenu-a-blue {
+  color: $blue !important;
+}
+.sideMenu-a-green {
+  color: $green !important;
+}
+.sideMenu-a-pink {
+  color: $pink !important;
+}
+.sideMenu-a-orange {
+  color: $orange !important
+}
+
+.bouncing-letters {
+  display: inline-block;
+}
+
+.bouncy-letter {
+  animation-name: bouncyChar;
+  animation-timing-function: linear;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+
+.title-box {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+
+  .title-ruller {
+    width: 90px;
+    border-bottom: 5px solid $blue;
+    border-radius: 5px;
+  }
+}
+
+.title-slogan-wrapper{
+  position: relative;
+  
+  h4 {
+    position: unset;
+    margin-top: 20px;
+  }
+}
+
+.off-section-title-box {
+  width: 80%;
+	margin: 100px auto 0 auto;
+}
+
+.contact-text {
+  line-height: 2.2rem;
+  font-size: 1.5rem;
+}
+
+
+@include media("<tablet") {
+	.my-heading {
+    font-size: 2rem;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 1.6rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+  h4 {
+    font-size: 1.25rem;
+  }
+  h5 {
+    font-size: 1rem;
+  }
+}
+
+@include media("<LGphone") {
+	.notFound-heading {
+    font-size: 3rem;
+  }
+}

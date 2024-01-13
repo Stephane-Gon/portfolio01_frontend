@@ -1,0 +1,415 @@
+@use '../helpers' as *;
+
+
+.projectSection {
+  min-height: 700px;
+  width: 70%;
+}
+
+.imgWrapper {
+  width: 70%;
+  padding: 10px 0;
+  background: #342e37e0;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  @include mainFlex(center);
+}
+
+.card {  
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  position: relative;
+  padding-block: 10px;
+  margin-top: 50px;
+
+  .cardBackground {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: #342e37e8;
+    z-index: 1;
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    filter: blur(5px);
+  }
+
+  .cardInnerBox {
+    background-color: $dark;
+    border-radius: 20px;
+    @include mainFlex(center);
+    width: 90%;
+    height: 90%;
+    padding: 5px;
+    z-index: 2;
+  }
+  
+  .cardUrl {
+    margin: 15px auto 0 auto;
+    width: 70%;
+    height: 50%;
+    grid-column: 1/4;
+
+    a {
+      transition: all .2s ease;
+      font-size: 1.7rem;
+    }
+    
+    i {
+      margin-right: 30px;
+    }
+
+    a:hover{
+      opacity: .8;
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+  }
+
+  .cardImgBox {
+    grid-column: 1 / 3;
+    grid-row: 2 / 7;
+    margin: 0 auto;
+
+    .cardImgWrapper {
+      width: 98%;
+      height: 98%;
+      margin: 0px auto;
+      border-radius: 20px;
+
+      .cardImg {
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+      }
+
+      .cardImgCover {
+        @include mainFlex(space-evenly);
+        flex-direction: column;
+        color: $light;
+        text-align: center;
+
+        p {width: 80%;}
+      }
+      
+
+      &:after, &:before {
+        background: $orange;
+      }
+      
+    }
+  }
+
+  .cardDescription {
+    grid-column: 3 / 4;
+    grid-row: 2 / 7;
+    border-radius: 20px;
+    flex-direction: column;
+    text-align: center;
+
+    h4 {
+      font-size: 2vw;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.5vw;
+      opacity: .9;
+    }
+  }
+}
+
+.heroSection {
+
+  span {
+    margin-top: 50px;
+  }
+
+  .heroImgWrapper {
+    width: 100%;
+    margin-top: 70px;
+    position: relative;
+
+
+    &:hover span {
+      display: block;
+    }
+    &:hover .heroImg {
+      opacity: .2;
+    }
+
+    .heroImg {
+      width: 98%;
+      border-radius: 5px;
+      opacity: .8;
+    }
+    span {
+      position: absolute;
+      color: $light;
+      display: none;
+
+      h2 {font-size: 3rem}
+    }
+  }
+}
+
+.resumeSection {
+  min-height: 800px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);  
+
+  .resumeText {
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+    font-size: 1.3rem;
+  }
+  .resumeImgWrapper {
+    grid-column: 2 / 4;
+    grid-row: 1 / 4;
+    @include mainFlex(center);
+    position: relative;
+
+    .pcImg {
+      width: 98%;
+      border-radius: 5px;
+    }
+    .phoneImgWrapper {
+      position: absolute;
+      width: 25%;
+      top: 40%;
+      left: 5%;
+
+      .phoneImg {
+        width: 96%;
+        border-radius: 5px;
+      }
+    }
+  }
+  
+  .resumeLink { 
+    margin-top: 70px;
+    @include mainFlex(center);
+    grid-column: 1 / 4;
+    grid-row: 4 / 5;
+  }
+}
+
+.designSection {
+  padding: 100px 0 100px 0;
+
+  span h4 {
+    width: 40%;
+  }
+
+  .designInnerSection {
+    margin-top: 200px;
+    text-align: center;
+
+    h4 {
+      @include text(2rem, 600, "bold");
+    }
+    p {
+      width: 30%;
+      margin: 20px auto 50px auto;
+      font-size: 1.5rem;
+    }
+
+    .panel {
+      filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.25));
+      width: 90%;
+    }
+  }
+}
+
+.toolsSection {
+  padding-top: 200px;
+
+  .toolsText {
+    margin: 200px 0 50px 0;
+    text-align: center;
+    
+    p {
+      margin-top: 20px;
+      font-size: 1.2rem;
+    }
+  }
+
+  .toolsWrapper {
+    @include mainFlex(space-evenly);
+    flex-wrap: wrap;
+    
+    .toolFlexItem {
+      flex: 1 0 21%;
+      margin-block: 20px;
+    }
+  }
+}
+
+.nextWorkBox{
+  width: 85%;
+  height: 60px;
+  background: $orange;
+  margin: 100px auto -90px auto;
+  @include mainFlex(space-between);
+  border-radius: 10px;
+    
+  h4 {
+    margin-left: 100px;
+    margin-block: 15px;
+    font-size: 2rem;
+  }
+  i{
+    font-size: 4rem;
+    margin-right: 100px;
+    transition: all .1s ease-in;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+
+@include media("<smDesktop") {
+  .projectSection  {min-height: 600px;}
+
+  .card .cardImgBox {
+    .cardImgWrapper .cardImgCover {
+      h2 {font-size: 2.1rem;}
+
+      p {font-size: 1.4rem;}
+      
+    }
+  }
+
+  .nextWorkBox{ width: 75%; }
+}
+
+@include media("<desktop") {
+  .card {
+    grid-template-rows: repeat(7, 1fr);
+
+    .cardImgBox {grid-row: 3 / 8;}
+    .cardDescription {grid-row: 3 / 8;}
+  }
+
+  .designSection span h4 {
+    width: 90%;
+  }
+}
+
+@include media("<LGtablet") {
+  .projectSection {
+    width: 90%;
+    min-height: 450px;
+  }
+
+  .heroSection { min-height: 900px; } 
+
+  .nextWorkBox{ 
+    width: 100%; 
+    border-radius: 0
+  }
+}
+
+@include media("<mTablet") {
+  .card {  
+    @include mainFlex(center);
+    flex-direction: column;
+    position: relative;
+    gap: 20px;
+  
+    .cardDescription {
+      margin-bottom: 10px;
+
+      h4 {font-size: 1.5rem;}
+      p {font-size: 1.2rem;}
+    }
+  }
+
+  .heroSection { min-height: 700px; } 
+
+  .resumeSection {
+    min-height: 800px; 
+    @include mainFlex(center);
+    flex-direction: column;
+  
+    .resumeText { margin-block: 20px; }
+    
+    .resumeLink { margin-top: 110px; }
+  }
+
+  .designSection .designInnerSection p {
+    width: 50%;
+  }
+
+  .toolsSection {
+
+    .toolsText {
+      margin: 100px 0 0 0;
+    }
+
+    .toolsWrapper {
+      .toolFlexItem {
+        flex: 0 0 21%;
+      }
+      
+    }
+  }
+}
+
+@include media("<tablet") {
+  .card {
+    .cardImgBox .cardImgWrapper {
+      .cardImgCover {
+        h2 {font-size: 1.8rem;}
+
+        p {font-size: 1.1rem;}
+      }
+      
+    }
+    .cardUrl {
+      a {
+        font-size: 1.1rem;
+      }
+    }
+  }
+  .heroSection {
+    min-height: 500px;
+  }
+
+  .resumeSection .resumeLink { margin-top: 150px; }
+
+  .designSection { padding-bottom: 0; }
+}
+
+@include media("<LGphone") {
+  .card {
+    .cardUrl {
+      width: 90%;
+      i {
+        margin-right: 10px;
+      }
+    }
+  }
+  
+  .designSection .designInnerSection {
+    margin-top: 100px;
+    p { width: 90%; }
+  }
+
+  .toolsSection {  padding-top: 0; }
+
+  .nextWorkBox{
+    h4 {
+      margin-left: 20px;
+      font-size: 1.5rem;
+    }
+    i{
+      margin-right: 20px;
+    }
+  }
+}

@@ -1,0 +1,144 @@
+@use '../helpers' as *;
+
+// HEADER ICON TO TOGGLE BETWEEN DARK AND LIGHT MODE
+.sun-moon-svg {
+	stroke: $blue;
+
+	.animated-circle-2 {
+		fill: $blue;
+	}
+
+	.sun-beams {
+		stroke: $blue;
+	}
+}
+
+
+// MY MAIN LOGO "STEF RIBEIRO"
+.logo-box {
+  @include mainFlex(center);
+  gap: 10px;
+
+  .logo-first {
+    color: $blue;
+  }
+  .logo-last {
+    font-style: normal;
+  }
+
+}
+
+// MY SIDE LOGO
+.side-logo {
+	display: flex;
+	transform: rotate(-90deg);
+	position: fixed;
+	left: -3%;
+	bottom: 23%;
+
+	.logo-ruller {
+		width: 80px;
+		border-bottom: $blue 3px solid;
+		border-radius: 1px;
+		margin-bottom: 10px;
+	}
+}
+
+// FOOTER SOCIAL ICONS
+.git-hub-icon, .linkdin-icon {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.error-icon {
+	font-size: 3.5rem;
+	position: absolute;
+	top: -8%;
+	right: -3%;
+}
+
+// SIDE PAGE MARKERS
+.link-marker-blue {
+	color: $blue;
+	svg {
+		stroke: $blue;
+		.markerPath1,
+		.markerPath2,
+		.markerRect {
+			fill: $blue;
+		}
+	}
+}
+.link-marker-green {
+	svg {
+		stroke: $green;
+		.markerPath1,
+		.markerPath2,
+		.markerRect {
+			fill: $green;
+		}
+	}
+}
+.link-marker-orange {
+	svg {
+		stroke: $orange;
+		.markerPath1,
+		.markerPath2,
+		.markerRect {
+			fill: $orange;
+		}
+	}
+}
+.link-marker-pink {
+	svg {
+		stroke: $pink;
+		.markerPath1,
+		.markerPath2,
+		.markerRect {
+			fill: $pink;
+		}
+	}
+}
+.link-marker-violet {
+	svg {
+		stroke: $violet;
+		.markerPath1,
+		.markerPath2,
+		.markerRect {
+			fill: $violet;
+		}
+	}
+}
+
+
+// ILLUSTRATIONS
+
+.illustration {
+	width: 35%;
+	aspect-ratio: 1;
+}
+
+
+@include media("<mTablet") {
+  .illustration {
+		width: 55%;
+	}
+}
+
+@include media("<tablet") {
+  .illustration {
+		width: 75%;
+	}
+}
+
+@media screen and (max-height: 850px) {
+  .side-logo {
+    bottom: 26%;
+  }
+}
+
+@media screen and (max-height: 770px) {
+  .side-logo {
+    bottom: 31%;
+  }
+}

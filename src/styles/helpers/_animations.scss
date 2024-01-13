@@ -1,0 +1,213 @@
+@use './mixins' as *;
+
+/* Keyframes */
+@keyframes fill {
+  0% {
+    width: 0%;
+    height: 1px;
+  }
+  50% {
+    width: 100%;
+    height: 1px;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@keyframes bubble1 {
+  0% {
+    transform: scale(0.9) translateY(0) translateX(0px) rotate(70deg);
+    -webkit-transform: scale(0.9) translateY(0) translateX(0px) rotate(70deg);
+    -moz-transform: scale(0.9) translateY(0) translateX(0px) rotate(70deg);
+  }
+  25% {
+    transform: scale(1) translateY(-10px) translateX(15px) rotate(180deg) scaleY(0.95) scaleX(1.05);
+    -webkit-transform: scale(1) translateY(-10px) translateX(15px) rotate(180deg) scaleY(0.95) scaleX(1.05);
+    -moz-transform: scale(1) translateY(-10px) translateX(15px) rotate(180deg) scaleY(0.95) scaleX(1.05);
+  }
+  50% {
+    transform: scale(1.1) translateY(-20px) translateX(-15px) rotate(360deg) scaleY(1) scaleX(0.9);
+    -webkit-transform: scale(1.1) translateY(-20px) translateX(-15px) rotate(360deg) scaleY(1) scaleX(0.9);
+    -moz-transform: scale(1.1) translateY(-20px) translateX(-15px) rotate(360deg) scaleY(1) scaleX(0.9);
+  }
+  75% {
+    transform: scale(1) translateY(-10px) translateX(15px) rotate(180deg) scaleY(0.98) scaleX(1.02);
+    -webkit-transform: scale(1) translateY(-10px) translateX(15px) rotate(180deg) scaleY(0.98) scaleX(1.02);
+    -moz-transform: scale(1) translateY(-10px) translateX(15px) rotate(180deg) scaleY(0.98) scaleX(1.02);
+  }
+  100% {
+    transform: scale(0.9) translateY(0) translateX(0px) rotate(70deg) scaleY(1.02) scaleX(0.98);
+    -webkit-transform: scale(0.9) translateY(0) translateX(0px) rotate(70deg) scaleY(1.02) scaleX(0.98);
+    -moz-transform: scale(0.9) translateY(0) translateX(0px) rotate(70deg) scaleY(1.02) scaleX(0.98);
+  }
+}
+
+@keyframes bubble2 {
+  0% {
+    transform: scale(0.9) translateY(0) translateX(0px) rotate(50deg);
+    -webkit-transform: scale(0.9) translateY(0) translateX(0px) rotate(50deg);
+    -moz-transform: scale(0.9) translateY(0) translateX(0px) rotate(50deg);
+  }
+  25% {
+    transform: scale(1) translateY(10px) translateX(-15px) rotate(110deg);
+    -webkit-transform: scale(1) translateY(10px) translateX(-15px) rotate(110deg);
+    -moz-transform: scale(1) translateY(10px) translateX(-15px) rotate(110deg);
+  }
+  50% {
+    transform: scale(1.1) translateY(20px) translateX(15px) rotate(180deg);
+    -webkit-transform: scale(1.1) translateY(20px) translateX(15px) rotate(180deg);
+    -moz-transform: scale(1.1) translateY(20px) translateX(15px) rotate(180deg);
+  }
+  75% {
+    transform: scale(1) translateY(10px) translateX(-15px) rotate(110deg);
+    -webkit-transform: scale(1) translateY(10px) translateX(-15px) rotate(110deg);
+    -moz-transform: scale(1) translateY(10px) translateX(-15px) rotate(110deg);
+  }
+  100% {
+    transform: scale(0.9) translateY(0) translateX(0px) rotate(50deg);
+    -webkit-transform: scale(0.9) translateY(0) translateX(0px) rotate(50deg);
+    -moz-transform: scale(0.9) translateY(0) translateX(0px) rotate(50deg);
+  }
+}
+
+@keyframes bubble3 {
+  0% {
+    transform: scale(0.9) translateY(-200px) translateX(0px) rotate(50deg);
+    -webkit-transform: scale(0.9) translateY(-200px) translateX(0px) rotate(50deg);
+    -moz-transform: scale(0.9) translateY(-200px) translateX(0px) rotate(50deg);
+  }
+  25% {
+    transform: scale(1) translateY(400px) translateX(500px) rotate(110deg);
+    -webkit-transform: scale(1) translateY(400px) translateX(500px) rotate(110deg);
+    -moz-transform: scale(1) translateY(400px) translateX(500px) rotate(110deg);
+  }
+  50% {
+    transform: scale(1.1) translateY(1000px) translateX(1000px) rotate(180deg);
+    -webkit-transform: scale(1.1) translateY(1000px) translateX(1000px) rotate(180deg);
+    -moz-transform: scale(1.1) translateY(1000px) translateX(1000px) rotate(180deg);
+  }
+  75% {
+    transform: scale(1) translateY(400px) translateX(500px) rotate(110deg);
+    -webkit-transform: scale(1) translateY(400px) translateX(500px) rotate(110deg);
+    -moz-transform: scale(1) translateY(400px) translateX(500px) rotate(110deg);
+  }
+  100% {
+    transform: scale(0.9) translateY(-200px) translateX(0px) rotate(50deg);
+    -webkit-transform: scale(0.9) translateY(-200px) translateX(0px) rotate(50deg);
+    -moz-transform: scale(0.9) translateY(-200px) translateX(0px) rotate(50deg);
+  }
+}
+
+
+@keyframes bubble5 {
+  0% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+  }
+  10% {
+    transform: scale(7);
+    -webkit-transform: scale(7);
+    -moz-transform: scale(7);
+  }
+  30%,
+  100%,
+  to {
+    transform: scale(0.8) translateX(-160%);
+    -webkit-transform: scale(0.8) translateX(-160%);
+    -moz-transform: scale(0.8) translateX(-160%);
+  }
+}
+
+@keyframes bubble6 {
+  0% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+  }
+  10% {
+    transform: scale(7);
+    -webkit-transform: scale(7);
+    -moz-transform: scale(7);
+  }
+  30%,
+  100%,
+  to {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+  }
+}
+
+@keyframes bouncyChar {
+  20%,
+  50%,
+  80%,
+  to {
+      transform: scale(1, 1);
+      -webkit-transform: scale(1, 1);
+      -moz-transform: scale(1, 1);
+  }
+  40% {
+      transform: scale(1.75, 0.65);
+      -webkit-transform: scale(1.75, 0.65);
+      -moz-transform: scale(1.75, 0.65);
+  }
+  45% {
+      transform: scale(1.75, 0.65);
+      -webkit-transform: scale(1.75, 0.65);
+      -moz-transform: scale(1.75, 0.65);
+  }
+  70% {
+      transform: scale(1.25, 0.75);
+      -webkit-transform: scale(1.25, 0.75);
+      -moz-transform: scale(1.25, 0.75);
+  }
+  90% {
+      transform: scale(1.15, 0.85);
+      -webkit-transform: scale(1.15, 0.85);
+      -moz-transform: scale(1.15, 0.85);
+  }
+}
+
+@keyframes hidden-expand {
+  20%,
+  100%,
+  to {
+    background: radial-gradient(50% 50% at 50% 50%, #96c0ed3b, rgb(150, 192, 237) 100%);
+    transform: scale(7);
+    -webkit-transform: scale(7);
+    -moz-transform: scale(7);
+  }
+}
+
+
+@keyframes slideTool {
+  0%,
+  20%,
+  to {
+    transform: translateX(150%);
+    -moz-transform: translateX(150%);
+    -webkit-transform: translateX(150%);
+  }
+  30% {
+    transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+  }
+  35% {
+    transform: translateX(1.2%);
+    -moz-transform: translateX(1.2%);
+    -webkit-transform: translateX(1.2%);
+  }
+  40%,
+  100%,
+  to {
+    transform: translateX(0.5%);
+    -moz-transform: translateX(0.5%);
+    -webkit-transform: translateX(0.5%);
+  }
+}
+

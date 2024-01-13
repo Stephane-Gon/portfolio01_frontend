@@ -1,0 +1,28 @@
+@use '../helpers' as *;
+
+
+.markers {
+  position: fixed;
+  right: 4%;
+  bottom: 10%;
+  display: flex;
+  flex-direction: column;
+
+  .marker {
+    margin-block: 1px;
+    cursor: pointer;
+  }
+}
+
+
+@media screen and (max-height: 850px) {
+  .markers {
+    bottom: 12%;
+  }
+}
+
+@media screen and (max-height: 770px) {
+  .markers {
+    bottom: 13%;
+  }
+}

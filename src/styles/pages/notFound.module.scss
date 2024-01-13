@@ -1,0 +1,27 @@
+@use '../helpers' as *;
+
+
+.notFoundSection {
+  min-height: 700px;
+
+  .textBox {
+    margin: 10% 0 50px 0;
+  }
+
+  button {
+    margin-top: 100px;
+  }
+}
+
+
+@include media("<mDesktop") {
+	.notFoundSection { min-height: 600px; }
+}
+
+@include media("<mTablet") {
+	.notFoundSection { min-height: 500px; }
+}
+
+@include media("<LGphone") {
+	.notFoundSection { min-height: 400px; }
+}

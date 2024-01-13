@@ -1,0 +1,174 @@
+@use '../helpers' as *;
+
+.navbar {
+  padding: 30px 80px;
+  @include mainFlex(space-between);
+
+  &.hideNavBar {
+    display: none
+  }
+
+  .navbarLinks {
+    @include mainFlex(center);
+
+    .marginRight {
+      margin-right: 60px;
+    }
+
+    .navbarLink, .activeLink {
+      font-size: 1.05rem;
+      position: relative;
+      padding: 5px 15px;
+
+      &:after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        color: transparent;
+        height: 1px;
+        text-align: left;
+        content: '.';
+        margin: 0;
+        opacity: 0;
+        border-radius: 3px;
+        box-shadow: inset 1px 2px 2px rgba(0, 0, 0, 0.15);
+      }
+    }
+    .activeLink {
+      z-index: 1;
+      transform: scale(1.05);
+      
+      &:after {
+        height: 100%;
+        z-index: -1;
+        opacity: 0.9;
+      }
+    }
+
+    .navbarLink {
+      transition: fill 1s;
+      transition: transform 0.2s;
+
+      &:hover {
+        z-index: 1;
+        transform: scale(1.05);
+      }
+      &:hover:after {
+        z-index: -1;
+        animation: fill 1s forwards;
+        -webkit-animation: fill 1s forwards;
+        -moz-animation: fill 1s forwards;
+        opacity: 0.9;
+      }
+    }
+    
+  }
+
+  .burgerLines {
+    cursor: pointer;
+    display: block;
+    position: fixed;
+    right: 2%;
+    height: 26px;
+    width: 32px;
+    z-index: 7;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .line {
+      display: block;
+      height: 4px;
+      width: 100%;
+      border-radius: 10px;
+
+      &.line1 {
+        transform-origin: 0% 0%;
+        transition: transform 0.4s ease-in-out;
+      }
+
+      &.line2 {
+        transition: transform 0.2s ease-in-out;
+      }
+
+      &.line3 {
+        transform-origin: 0% 100%;
+        transition: transform 0.4s ease-in-out;
+      }
+    }
+  }
+}
+
+.sideMenu {
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 6;
+  width: 100%;
+  height: 100vh;
+
+  .logoWrapper {
+    margin-top: 35px;
+    padding-left: 5%;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 40px auto 0 auto;
+
+    .navbarLink, .activeLink {
+      font-size: 2.5rem;
+      margin-block: 6%;
+    }
+
+    .btnLink {
+      margin-block: 6%;
+    }
+  }
+
+  .socialLinks {
+    position: absolute;
+    right: 7%;
+    bottom: 10%;
+
+    a {
+      margin: 0 10px;
+    }
+  }
+
+  .logoPhone {
+    position: absolute;
+    left: 7%;
+    bottom: 10%;
+  }
+}
+
+@include media("<desktop") {
+  .navbar .navbarLinks {
+    .marginRight {
+      margin-right: 40px;
+    }
+  }
+
+}
+
+@include media("<LGtablet") {
+  .navbar  {
+    padding: 30px 10px;
+  }
+
+}
+
+@include media("<tablet") {
+  .sideMenu .links {
+    width: 40%;
+    .navbarLink, .activeLink {
+      margin-block: 11%;
+    }
+    .btnLink {  margin-block: 10%; }
+  }
+}

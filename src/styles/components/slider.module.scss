@@ -1,0 +1,105 @@
+@use '../helpers' as *;
+
+
+.slider {
+  position: relative;
+  width: 65%;
+  height: 500px;
+  margin: 150px auto 0 auto;
+
+  .slide {
+    width: 100%;
+    height: 0;
+    padding-top: 66.64%;
+    border-radius: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .projectSlide {
+    width: 95%;
+    margin: 0 auto;
+    border-radius: 10px;
+
+    .proCardImg {
+      padding-top: 1%;
+      height: 98%;
+      width: 98%;
+      border-radius: 10px;
+    }
+    .proCardText {
+      margin: 0 auto;
+      width: 98%;
+      padding-block: 10px;
+      text-align: left; 
+      position: relative;
+
+      p {
+        margin-top: 10px
+      }
+
+      i{
+        position: absolute;
+        right: 0;
+        bottom: 15%;
+        color: $blue;
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .doots {
+    @include mainFlex(center);
+    gap: 20px;
+    margin-top: 20px;
+
+    .doot, .blueDoot {
+      width: 30px;
+      position: relative;
+      cursor: pointer;
+      z-index: 2;
+      background: radial-gradient(50% 50% at 50% 50%, rgba(196, 196, 196, 0) 85.42%, rgba(252, 181, 95, 0.5) 100%);
+    
+      &.activeDoot, &.blueActiveDoot {
+        background: $orange;
+      }
+
+      .dootElipse, .blueDootElipse {
+        background: linear-gradient(180deg, rgba(252, 181, 95, 0.25) 0%, rgba(245, 245, 245, 0.1) 88.54%);
+      }
+    }
+
+    .blueDoot {
+      background :'radial-gradient(50% 50% at 50% 50%, rgba(196, 196, 196, 0) 85.42%, rgba(166, 241, 126, 0.5) 100%)';
+      
+      &.blueActiveDoot {
+        background: $blue;
+      }
+
+      .blueDootElipse {
+        background: 'linear-gradient(180deg, rgba(166, 241, 126, 0.35) 0%, rgba(245, 245, 245, 0.1) 88.54%)'
+      }
+    }
+  }
+}
+
+
+@include media("<mDesktop") {
+	.slider {width: 80%;}
+}
+
+@include media("<desktop") {
+	.slider {width: 90%;}
+}
+
+@include media("<mTablet") {
+	.slider {width: 95%;}
+}
+
+@include media("<LGphone") {
+	.slider {
+    width: 100%;
+    margin-top: 100px;
+  }
+}
