@@ -22,7 +22,6 @@ const SingleProjectPage = ({errorRef}) => {
   const params = useParams()
   let [data, isLoading] = useFetch(`stefapi/projects/${params['id']}`, errorRef, "Single Project")
   
-  console.log("🚀 ~ SingleProjectPage ~ data:", data)
   let theme = useTheme()
 
   useEffect(() => {

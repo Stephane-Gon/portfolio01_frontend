@@ -13,7 +13,6 @@ import stylesS from '../../styles/pages/skills.module.scss'
 import stylesH from '../../styles/pages/home.module.scss'
 
 const SkillSection = ({id, skill, tools, color}) => {
-  console.log("🚀 ~ SkillSection ~ skill:", skill)
   let windowWidth = useWidth()
   
   let skillRef = useRef(null)
