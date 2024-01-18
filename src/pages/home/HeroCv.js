@@ -19,7 +19,7 @@ const HeroCv = () => {
 
   return (
     <span className={s.heroCvBox}>
-      <a className={s.center} href={url} target="_blank" download="stephane-cv.pdf" >
+      <a className={s.center} rel="noreferrer" href={url} target="_blank" download="stephane-cv.pdf" >
         <button className={s.btn} style={shadow}>
           <svg width="300px" height="60px" viewBox="0 0 300 60" className={s.border}>
             <polyline points="299,1 299,59 1,59 1,1 299,1" className={s.bgLine} />

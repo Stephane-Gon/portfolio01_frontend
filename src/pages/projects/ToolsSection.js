@@ -20,11 +20,12 @@ const ToolsSection = ({tools, title, slogan}) => {
   })
 
   let elements = []
-  elements = tools.map((tool, i) => {
+  elements = tools?.map((tool, i) => {
+
     return(
       <VisibilitySensor key={i} onChange={onChange} partialVisibility={true}>
         <animated.div  className={s.toolFlexItem} style={spring}>
-          <ToolBubble content={tool['fields']} color="Orange"/>
+          <ToolBubble content={tool} color="Orange"/>
         </animated.div>
       </VisibilitySensor>
     )

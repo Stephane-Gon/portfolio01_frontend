@@ -12,8 +12,8 @@ const ToolBubble = ({content, color}) => {
   let theme = useTheme()
   let bubbleStyles = bubbleColor(theme.mainColor)
 
-  let name = theme.darkTheme ? content[`svg${color}`] : content['svg']
-  let url = dynamicUrl('media', name)
+  let name = theme.darkTheme ? content[`svg${color}`] : content.svg
+  let url = dynamicUrl('data', name)
 
   return (
     <div className={styles.tollBubbleBox} data-tip={content['description']}>

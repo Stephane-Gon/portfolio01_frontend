@@ -51,7 +51,7 @@ const ResumeSection = ({content}) => {
             <div style={backgroundStyle} className={s.imgWrapper}>
               <img 
                   className={s.pcImg} 
-                  src={dynamicUrl('media', content['mainImg'])}  
+                  src={dynamicUrl('data', content['mainImg'])}  
                   alt={`Computer version of ${content['title']} website.`}
                 />
             </div>
@@ -61,7 +61,7 @@ const ResumeSection = ({content}) => {
               <div style={backgroundStyle} className={`${s.imgWrapper} ${s.phoneImgWrapper}`}>
                 <img 
                     className={s.phoneImg} 
-                    src={dynamicUrl('media', content['phoneImg'])}  
+                    src={dynamicUrl('data', content['phoneImg'])}  
                     alt={`Phone version of ${content['title']} website.`}
                   />
               </div>

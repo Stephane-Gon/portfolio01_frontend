@@ -12,7 +12,7 @@ import { useTheme } from "../contexts/ThemeProvider";
 const SkillsToolsPage = ({errorRef}) => {
   let windowWidth = useWidth()
   
-  let [data, isLoading] = useFetch('/stefapi/skills&tools/', errorRef, "Skills&Tools")
+  let [data, isLoading] = useFetch('stefapi/skills&tools/', errorRef, "Skills&Tools")
 
   let markerTitles = ['Nav', 'Uiux', 'Frontend', 'Backend']
 

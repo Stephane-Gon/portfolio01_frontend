@@ -12,7 +12,7 @@ import { dynamicUrl } from "../helpers";
 function AboutPage({errorRef}) {
   let windowWidth = useWidth()
 
-  let [aboutData, isLoading] = useFetch('/stefapi/about/', errorRef, "About me")
+  let [aboutData, isLoading] = useFetch('stefapi/about/', errorRef, "About me")
 
   const theme = useTheme()
 

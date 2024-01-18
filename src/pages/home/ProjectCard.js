@@ -39,7 +39,7 @@ const ProjectCard = ({projects, isFlip=false}) => {
     delay: 300
   })
 
-  let url = dynamicUrl('media', projects['mainImg'])
+  let url = dynamicUrl('data', projects['mainImg'])
 
   if(projects) {
 

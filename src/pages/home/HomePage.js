@@ -13,7 +13,7 @@ import { useTheme } from "../../contexts/ThemeProvider";
 import { dynamicUrl } from "../../helpers";
 
 function HomePage({errorRef}) {
-  let [homeData] = useFetch('/stefapi/home/', errorRef, "Home")
+  let [homeData] = useFetch('stefapi/home', errorRef, "Home")
   let windowWidth = useWidth()
 
   const theme = useTheme()

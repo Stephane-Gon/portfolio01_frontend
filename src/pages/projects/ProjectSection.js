@@ -23,7 +23,7 @@ const ProjectSection = ({id, content}) => {
 
   let description = truncate(content['description'], 250, '...')
 
-  let url = dynamicUrl('media', content['mainImg'])
+  let url = dynamicUrl('data', content['mainImg'])
 
   return (
     <section id={id} className={s.projectSection}>

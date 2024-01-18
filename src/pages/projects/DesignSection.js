@@ -9,8 +9,8 @@ import { dynamicUrl } from "../../helpers";
 
 
 const DesignSection = ({content}) => {
-  let project = content['project'][0]
-  let allImgs = content['allImgs']
+  let project = content.project
+  let allImgs = content.allImgs
 
   return (
     <section id="sectionDesign" className={s.designSection}>
@@ -20,31 +20,31 @@ const DesignSection = ({content}) => {
       </span>
 
       {
-        project['colorsPanel']
+        project.colorsPanel
           &&
         <div className={s.designInnerSection}>
           <h4>Colors</h4>
-          {project['colorsText'] && <p>{project['colorsText']}</p>}
+          {project.colorsText && <p>{project.colorsText}</p>}
 
           <img 
             className={s.panel} 
-            src={dynamicUrl('media', project['colorsPanel'])}  
-            alt={`${project['title']}`}
+            src={dynamicUrl('data', project.colorsPanel)}  
+            alt={`${project.title}`}
           />
         </div>
       }
 
       {
-        project['fontsPanel']
+        project.fontsPanel
           &&
         <div className={s.designInnerSection}>
           <h4>Fonts</h4>
-          {project['fontsText'] && <p>{project['fontsText']}</p>}
+          {project.fontsText && <p>{project.fontsText}</p>}
 
           <img 
               className={s.panel} 
-              src={dynamicUrl('media', project['fontsPanel'])}  
-              alt={`${project['title']}`}
+              src={dynamicUrl('data', project.fontsPanel)}  
+              alt={`${project.title}`}
             />
         </div>
       }

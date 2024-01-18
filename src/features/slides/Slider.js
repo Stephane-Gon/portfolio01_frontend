@@ -13,7 +13,7 @@ const Slider = ({images}) => {
   return (
     <div className={s.slider}>
 
-      <div className={s.slide} style={{backgroundImage: `url(${dynamicUrl("media", images[currentIndex]['image'])})`}}></div>
+      <div className={s.slide} style={{backgroundImage: `url(${dynamicUrl("data", images[currentIndex]['image'])})`}}></div>
 
       <div className={s.doots}>
         {

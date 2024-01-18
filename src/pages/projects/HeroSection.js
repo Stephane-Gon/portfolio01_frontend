@@ -50,7 +50,7 @@ const HeroSection = ({title, slogan, img, uiux, frontend, backend}) => {
     delay: 300
   })
 
-  let url = dynamicUrl('media', img)
+  let url = dynamicUrl('data', img)
 
   return (
     <section id="sectionHero" className={s.heroSection}>

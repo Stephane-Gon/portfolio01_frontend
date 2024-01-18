@@ -125,28 +125,15 @@ function getCookie(name) {
 // DYNAMIC URL FUNCTION
 export const dynamicUrl = (type, name) => {
   let url
-
-  if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
-    if (type === 'media') {
-      url = `../static/media/${name}`
-    }
-    else if (type === 'cv') {
-      url = `../static/${name}`
-    }
-    else {
-      url = `../static/images/${name}`
-    }
-
-  } else {
-    if (type === 'media') {
-      url = `https://stef-portfolio-bucket.s3.amazonaws.com/media/${name}`
-    }
-    else if (type === 'cv') {
-      url = `https://stef-portfolio-bucket.s3.amazonaws.com/static/${name}`
-    }
-    else {
-      url = `https://stef-portfolio-bucket.s3.amazonaws.com/static/images/${name}`
-    }
+  if (type === 'cv') {
+    url = `../static/${name}`
   }
+  else if (type === 'data') {
+    url = `../static/images/${name}`
+  }
+  else {
+    url = `../static/images/${name}`
+  }
+
   return url
 };

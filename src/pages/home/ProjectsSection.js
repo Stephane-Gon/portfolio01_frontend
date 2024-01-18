@@ -50,7 +50,7 @@ const ProjectsSection = ({projects}) => {
               <div className={sliderStyle.projectSlide} style={slideBackground}>
                 <img 
                   className={sliderStyle.proCardImg} 
-                  src={dynamicUrl('media', projects[currentIndex]['mainImg'])} 
+                  src={dynamicUrl('data', projects[currentIndex]['mainImg'])} 
                   alt={`${projects['title']}`}
                 />
 

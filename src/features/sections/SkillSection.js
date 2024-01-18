@@ -13,6 +13,7 @@ import stylesS from '../../styles/pages/skills.module.scss'
 import stylesH from '../../styles/pages/home.module.scss'
 
 const SkillSection = ({id, skill, tools, color}) => {
+  console.log("🚀 ~ SkillSection ~ skill:", skill)
   let windowWidth = useWidth()
   
   let skillRef = useRef(null)
@@ -96,12 +97,12 @@ const SkillSection = ({id, skill, tools, color}) => {
                     <div className={stylesB.bubbleShinny}></div>
                   </div>
                   <span className={stylesB.bubbleText}>
-                    <h2>{ skill[0]['title'] }</h2>
-                    <p>{ skill[0]['description'] }</p>
+                    <h2>{ skill.title }</h2>
+                    <p>{ skill.description }</p>
                   </span>
                   <img
-                    src={dynamicUrl('media', skill[0]['svg'])}
-                    alt={`${skill[0]['title']} logo`}
+                    src={dynamicUrl('data', skill.svg)}
+                    alt={`${skill.title} logo`}
                     className={stylesB.bubbleSkillLogo}
                   />
                 </animated.div>
@@ -138,12 +139,12 @@ const SkillSection = ({id, skill, tools, color}) => {
                     <div className={stylesB.bubbleShinny}></div>
                   </div>
                   <span className={stylesB.bubbleText}>
-                  <h2>{ skill['title'] }</h2>
-                    <p>{ skill['description'] }</p>
+                  <h2>{ skill.title }</h2>
+                    <p>{ skill.description }</p>
                   </span>
                   <img
-                    src={dynamicUrl('media', skill['svg'])}
-                    alt={`${skill['title']} logo`}
+                    src={dynamicUrl('data', skill.svg)}
+                    alt={`${skill.title} logo`}
                     className={stylesB.bubbleSkillLogo}
                   />
                 </animated.div>

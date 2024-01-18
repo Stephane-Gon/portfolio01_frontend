@@ -20,14 +20,15 @@ import s from '../../styles/pages/projects.module.scss'
 let markerTitles = ['Nav', "Hero", "Resume", "Design", "Tools"]
 const SingleProjectPage = ({errorRef}) => {
   const params = useParams()
-  let [data, isLoading] = useFetch(`/stefapi/projects/${params['id']}`, errorRef, "Single Project")
+  let [data, isLoading] = useFetch(`stefapi/projects/${params['id']}`, errorRef, "Single Project")
   
+  console.log("🚀 ~ SingleProjectPage ~ data:", data)
   let theme = useTheme()
 
   useEffect(() => {
     document.title = 'Project'
     theme.toggleMainColor('/projects')
-  }, [])
+  }, [theme])
 
   let windowWidth = useWidth()
 
@@ -38,16 +39,16 @@ const SingleProjectPage = ({errorRef}) => {
         !isLoading 
           && 
         <HeroSection 
-          title={data['project'][0]['title']}
-          slogan={data['project'][0]['slogan']} 
-          img={data['project'][0]['mainImg']} 
-          uiux={data['project'][0]['uiUx']} 
-          frontend={data['project'][0]['frontend']} 
-          backend={data['project'][0]['backend']} 
+          title={data.project.title}
+          slogan={data.project.slogan} 
+          img={data.project.mainImg} 
+          uiux={data.project.uiUx} 
+          frontend={data.project.frontend} 
+          backend={data.project.backend} 
         />
       }
-      {!isLoading && <ResumeSection content={data['project'][0]} />}
-      {!isLoading && data['project'][0]['uiUx'] && <DesignSection content={data}/>}
+      {!isLoading && <ResumeSection content={data.project} />}
+      {!isLoading && data.project.uiUx && <DesignSection content={data}/>}
       
       <section id="sectionTools" className={s.toolsSection}>
 
@@ -58,10 +59,10 @@ const SingleProjectPage = ({errorRef}) => {
         {
           !isLoading
             &&
-          data['project'][0]['uiUx']
+            data.project.uiUx
             &&
           <ToolsSection 
-            tools={JSON.parse(data['uiUxTools'])} 
+            tools={data.uiTools} 
             title="UI/UX"
             slogan="I used these tools for the design."  
           />
@@ -69,10 +70,10 @@ const SingleProjectPage = ({errorRef}) => {
         {
           !isLoading
             &&
-          data['project'][0]['frontend']
+            data.project.frontend
             &&
           <ToolsSection 
-            tools={JSON.parse(data['frontendTools'])} 
+            tools={data.frontendTools} 
             title="Frontend"
             slogan="I used these tools to create the frontend."  
           />
@@ -80,10 +81,10 @@ const SingleProjectPage = ({errorRef}) => {
         {
           !isLoading
             &&
-          data['project'][0]['backend']
+            data.project.backend
             &&
           <ToolsSection 
-            tools={JSON.parse(data['backendTools'])} 
+            tools={data.backendTools} 
             title="Backend"
             slogan="I used these tools to create the backend."  
           />

@@ -20,7 +20,7 @@ const ProjectsPage = ({errorRef}) => {
     theme.toggleMainColor('/projects')
   }, [])
 
-  let [data, isLoading] = useFetch('/stefapi/projects/', errorRef, "Projects")
+  let [data, isLoading] = useFetch('stefapi/projects/', errorRef, "Projects")
   
 
   let elements = []

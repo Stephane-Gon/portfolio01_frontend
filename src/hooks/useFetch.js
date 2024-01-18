@@ -1,16 +1,12 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useCallback } from "react"
 
 function useFetch(path, ref, title) {
   const [content, setContent] = useState({})
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(null);
-
-  useEffect(() => {
-    fetchData()
-  }, [])
-
-  const fetchData = () => {
-    fetch(path)
+  
+  const fetchData = useCallback(() => {
+    fetch(`${process.env.REACT_APP_LOCAL_API_URL}/${path}`)
       .then((res) => {
         if(!res.ok) {
           throw Error('We have a little problem.')
@@ -31,7 +27,11 @@ function useFetch(path, ref, title) {
         ref.current.querySelector('h5').innerText = errorMsg
         ref.current.style.display = 'block'
       });
-  };
+  }, [path, ref, title])
+
+  useEffect(() => {
+    fetchData()
+  }, [fetchData])
 
   return [content, isLoading]
 }
