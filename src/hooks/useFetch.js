@@ -6,7 +6,7 @@ function useFetch(path, ref, title) {
   const [isError, setIsError] = useState(null);
   
   const fetchData = useCallback(() => {
-    fetch(`${process.env.REACT_APP_LOCAL_API_URL}/${path}`)
+    fetch(`${process.env.REACT_APP_API_URL}/${path}`)
       .then((res) => {
         if(!res.ok) {
           throw Error('We have a little problem.')
